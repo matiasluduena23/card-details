@@ -21,6 +21,11 @@ body {
   font-size: 18px;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
