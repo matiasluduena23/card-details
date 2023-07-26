@@ -7,13 +7,10 @@
 }
 
 :root {
-
   --very-light-gray: hsl(270, 3%, 87%);
   --dark-gray: hsl(279, 6%, 55%);
   --very-dark-blue: hsl(278, 68%, 11%);
-
 }
-
 
 body {
   font-family: 'Space Grotesk', sans-serif;
