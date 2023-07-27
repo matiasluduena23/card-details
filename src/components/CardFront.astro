@@ -2,9 +2,57 @@
 ---
 
 <section>
-
+  <figure>
+    <img src="../images/card-logo.svg" alt="logo">
+  </figure>
+  <div class="card-number">
+    <span>0000</span>
+    <span>0000</span>
+    <span>0000</span>
+    <span>0000</span>
+  </div>
+  <p class="name">Jane Appleseed</p>
+  <p class="date"><span>00</span>/<span>00</span></p>
 </section>
 
 <style>
+
+  section {
+    height: 150px;
+    width: 274px;
+    background-image: url('../images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 1rem;
+    color: var(--very-light-gray);
+    position: relative;
+    letter-spacing: 2px;
+  }
+
+  figure {
+    width: 50px;
+  }
+
+  .card-number {
+    position: absolute;
+    bottom: 3rem;
+  }
+
+  .name,
+  .date {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
   
+  .name {
+    left: 1rem;
+  }
+
+  .date {
+    right: 1rem;
+  }
+
+
 </style>
