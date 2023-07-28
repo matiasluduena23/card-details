@@ -15,8 +15,8 @@
   <div class="grid">
     <div class="col-1">
       <label for="date">Exp. Date (MM/YY)</label>
-      <input type="text" name="month" id="month" placeholder="MM">
-      <input type="text" name="year" id="year" placeholder="YY">
+      <input type="number" name="month" id="month" placeholder="MM">
+      <input type="number" name="year" id="year" placeholder="YY">
     </div>
     <div class="col-2">
       <label for="cvc">CVC</label>
@@ -33,7 +33,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  
+  width: 400px;
 }
 
   label {
@@ -49,13 +49,13 @@ form {
     border-radius: 7px;
     border: 1px solid var(--very-light-gray);
     padding-block: 0.7rem;
+    padding-left: 15px;
     font-size: 18px;
     font-family: 'Space Grotesk', sans-serif;
-
+    outline-color:  hsl(278, 94%, 30%);
   }
 
   input::placeholder {
-    padding-left: 0.8rem;
     font-weight: 500;
     color: var(--very-light-gray);
   }
@@ -70,13 +70,18 @@ form {
     gap: 1rem;
   }
 
+  .col-1,
+  .col-2{
+    width: 50%;
+  }
+
   #month,
   #year {
     width: 70px;
   }
 
   #cvc {
-    width: 150px;
+    width: 100%;
   }
 
   button {
@@ -95,6 +100,12 @@ form {
     background-image: linear-gradient(hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
   }
 
+  @media(min-width: 900px){
+    form {
+      gap: 2rem;
+      
+    }
+  }
 
 </style>
 
