@@ -9,7 +9,7 @@ function isLetter(data){
 }
 
 //function take the input, the label, the max or char and the function to test
-const loadOnKeyDown= (input, label, max, match ) =>{
+const loadOnKeyDown = (input, label, max, match ) =>{
       let result = "";
       //to check special char
       const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
