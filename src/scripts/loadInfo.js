@@ -3,6 +3,7 @@
 function isReallyNumber(data) {
   return /[0-9]/.test(data.key);
 }
+
 //check if is a letter
 function isLetter(data){
   return String.fromCharCode(data.keyCode).match(/[A-Za-z ]/i) && !data.key.match(/[0-9]/);
@@ -30,6 +31,7 @@ const loadOnKeyDown = (input, label, max, match ) =>{
           label.innerHTML = result;
 
         }else if(e.key === 'Backspace') {
+          result = result.trimEnd();
           result = result.substring(0, result.length - 1);
           label.innerHTML = result;
 
@@ -49,3 +51,10 @@ loadOnKeyDown('#month', '.month', 2, isReallyNumber);
 loadOnKeyDown('#year', '.year', 2, isReallyNumber);
 loadOnKeyDown('#cvc', '.code-number', 3, isReallyNumber);
 loadOnKeyDown('#number',".card-number", 19, isReallyNumber);
+
+
+
+const validate = (input) => {
+
+
+}

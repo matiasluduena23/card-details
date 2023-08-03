@@ -1,0 +1,29 @@
+---
+
+const {text, id} = Astro.props;
+
+---
+
+
+<button id={id}>{text}</button>
+
+<style>
+button {
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    background: var(--very-dark-blue);
+    color: var(--very-light-gray);
+    border: none;
+    border-radius: 7px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    background-image: linear-gradient(hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
+  }
+
+
+</style>

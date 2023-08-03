@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-J7PV25F6">
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<meta name="viewport" content="width=device-width">
+		<meta name="generator" content="Astro v2.9.2">
+		<title>Interactive Card</title>
+	<link rel="stylesheet" href="/_astro/index.ed6756de.css" /><script type="module">function a(e){return/[0-9]/.test(e.key)}function y(e){return String.fromCharCode(e.keyCode).match(/[A-Za-z ]/i)&&!e.key.match(/[0-9]/)}const l=(e,t,r,o)=>{let n="";const d=/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;e=document.querySelector(e),t=document.querySelector(t),e.addEventListener("keydown",c=>{n.length<r&&o(c)&&!d.test(c.key)?(n+=c.key,a(c)&&(n.length===4&&(n+=" "),n.length===9&&(n+=" "),n.length===14&&(n+=" ")),t.innerHTML=n):c.key==="Backspace"?(n=n.trimEnd(),n=n.substring(0,n.length-1),t.innerHTML=n):c.preventDefault()})};l("#name",".name",20,y);l("#month",".month",2,a);l("#year",".year",2,a);l("#cvc",".code-number",3,a);l("#number",".card-number",19,a);const v=document.querySelector("#submit"),h=document.querySelector("form"),f=document.querySelector(".send-form");v.addEventListener("click",e=>{console.log("Button"),e.preventDefault(),s("#name")&&s("#number")&&s("#month")&&s("#year")&&s("#cvc")&&(h.style.display="none",f.style.display="flex")});const s=e=>{const t=document.querySelector(e);return t.value===""?(u(t,"Can't be blank"),!1):(i(t),!0)},m=(e,t,r)=>{const o=document.querySelector(e);o.addEventListener("change",n=>{o.value.length<t?u(o,`Need ${t} ${r}`):i(o)})},g=(e,t)=>{const r=document.querySelector(e),o=document.querySelector(t),n=new Date;r.addEventListener("change",d=>{new Date(`20${r.value}`,o.value-1,1).getTime()<n.getTime()?(u(r,"Invalid Date"),u(o,"Invalid Date")):(i(r),i(o))})};m("#name",10,"characters");m("#number",16,"number");m("#cvc",3,"number");g("#year","#month");const u=(e,t)=>{e.classList.add("error");const r=e.nextElementSibling;r.classList.add("error"),r.innerHTML=t},i=e=>{e.classList.remove("error");const t=e.nextElementSibling;t.classList.remove("error"),t.innerHTML=""};
+</script></head>
+	<body class="astro-J7PV25F6">
+		<main class="astro-J7PV25F6">
+			
+				<section class="card astro-J7PV25F6">
+					<div class="card-front astro-J7PV25F6">
+						<section class="astro-2O4NDLSZ">
+  <figure class="astro-2O4NDLSZ">
+    <img src="../images/card-logo.svg" alt="logo" class="astro-2O4NDLSZ">
+  </figure>
+  <div class="astro-2O4NDLSZ">
+    <p class="card-number astro-2O4NDLSZ">0000 0000 0000 0000</p>
+  </div>
+  <p class="name astro-2O4NDLSZ">Jane Appleseed</p>
+  <p class="date astro-2O4NDLSZ"><span class="month astro-2O4NDLSZ">00</span>/<span class="year astro-2O4NDLSZ">00</span></p>
+</section>
+					</div>
+					<div class="card-back astro-J7PV25F6">
+						<section class="astro-HEN7YTW3">
+  <p class="code-number astro-HEN7YTW3">000</p>
+</section>
+					</div>
+				</section>
+				<section class="form astro-J7PV25F6">
+					<form action="#" class="astro-346426Y5">
+
+  <div class="form-control astro-GPBIC766">
+    <label for="name" class="astro-GPBIC766">Cardholder Name</label>
+    <input autofocus type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" class="astro-GPBIC766">
+    <span class="error astro-GPBIC766"></span>
+</div>
+  
+  <div class="form-control astro-GPBIC766">
+    <label for="number" class="astro-GPBIC766">Card Number</label>
+    <input autofocus type="number" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" class="astro-GPBIC766">
+    <span class="error astro-GPBIC766"></span>
+</div>
+
+  <div class="grid astro-346426Y5">
+    <div class="col-1 astro-346426Y5">
+
+      <div class="form-control astro-GPBIC766">
+    <label for="date" class="astro-GPBIC766">Exp. Date</label>
+    <input autofocus type="number" name="month" id="month" placeholder="MM" class="astro-GPBIC766">
+    <span class="error astro-GPBIC766"></span>
+</div>
+      <div class="form-control astro-GPBIC766">
+    <label for="date" class="astro-GPBIC766">(MM/YY)</label>
+    <input autofocus type="number" name="year" id="year" placeholder="YY" class="astro-GPBIC766">
+    <span class="error astro-GPBIC766"></span>
+</div>
+      
+    </div>
+    <div class="col-2 astro-346426Y5">
+      <div class="form-control astro-GPBIC766">
+    <label for="cvc" class="astro-GPBIC766">CVC</label>
+    <input autofocus type="number" name="cvc" id="cvc" placeholder="e.g. 123" class="astro-GPBIC766">
+    <span class="error astro-GPBIC766"></span>
+</div>
+      
+    </div>
+  </div>    
+    <button id="submit" class="astro-VNZLVQNM">Confirm</button>
+</form> 
+					<section class="send-form astro-RX6MZIGT">
+    <figure class="astro-RX6MZIGT">
+        <img src="../images/icon-complete.svg" alt="" class="astro-RX6MZIGT">
+    </figure>
+    <div class="text astro-RX6MZIGT">
+        <h1 class="astro-RX6MZIGT">Thank you!</h1>
+        <p class="astro-RX6MZIGT">We've added your card details</p>
+    </div>
+    <button class="astro-VNZLVQNM">Continue</button>
+</section> 
+				</section>
+	
+		</main>
+		
+		
+	
+	
+</body></html>

@@ -1,41 +1,31 @@
 ---
 
+import Button from "./Button.astro";
+import FormControl from "./FormControl.astro";
+const name = "Confirm";
+
 
 ---
 
 <form action="#">
-  <div class="form-control">
-    <label for="name">Cardholder Name</label>
-    <input  autofocus type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" >
-    <span class="error"></span>
-  </div>
-  <div class="form-control">
-    <label for="number">Card Number</label>
-    <input  tab-focus="true" type="number" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" >
-    <span class="error"></span>
-  </div>
+
+  <FormControl labelFor="name" labelText="Cardholder Name" inputType="text" inputId="name" placeholder="e.g. Jane Appleseed" />
+  
+  <FormControl labelFor="number" labelText="Card Number" inputType="number" inputId="number" placeholder="e.g. 1234 5678 9123 0000" />
+
   <div class="grid">
     <div class="col-1">
-      <div class="form-control">
-        <label for="date">Exp. Date </label>
-          <input  type="number" name="month" id="month" placeholder="MM" >
-          <span class="error"></span>
-      </div>
-      <div class="form-control">
-        <label for="date">(MM/YY)</label>
-          <input  type="number" name="year" id="year" placeholder="YY" >
-          <span class="error"></span>
-      </div>
+
+      <FormControl labelFor="date" labelText="Exp. Date" inputType="number" inputId="month" placeholder="MM" />
+      <FormControl labelFor="date" labelText="(MM/YY)" inputType="number" inputId="year" placeholder="YY" />
+      
     </div>
     <div class="col-2">
-      <div class="form-control">
-        <label for="cvc">CVC</label>
-        <input  type="number" name="cvc" id="cvc" placeholder="e.g. 123" >
-        <span class="error"></span>
-      </div>
+      <FormControl labelFor="cvc" labelText="CVC" inputType="number" inputId="cvc" placeholder="e.g. 123" />
+      
     </div>
   </div>    
-  <button>Confirm</button>
+    <Button text={name} id="submit" />
 </form>
 
 <style>
@@ -48,39 +38,6 @@ form {
   width: 400px;
 }
 
-.form-control {
-  position: relative;
-  margin-block: 0.3rem;
-}
-
-  label {
-    display: block;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-bottom: 5px;
-    letter-spacing: 2px;
-    color: var(--very-dark-blue);
-  }
-
-  input {
-    border-radius: 7px;
-    border: 1px solid var(--very-light-gray);
-    padding-block: 0.7rem;
-    padding-left: 15px;
-    font-size: 18px;
-    font-family: 'Space Grotesk', sans-serif;
-    outline-color:  hsl(278, 94%, 30%);
-  }
-
-  input::placeholder {
-    font-weight: 500;
-    color: var(--very-light-gray);
-  }
-
-  #name,
-  #number {
-    width: 100%;
-  }
 
   .grid {
     display: flex;
@@ -99,49 +56,7 @@ form {
     justify-content: start;
     gap: 0.5rem;
   }
-
-  #month,
-  #year {
-    width: 90px;
-  }
-
-  #cvc {
-    width: 100%;
-  }
-
-  .form-control span {
-    position: absolute;
-    bottom: -20px;
-    left: 5px;
-    color: red;
-    font-size: 12px;
-    visibility: hidden;
-  }
-
-  .form-control span.error {
-    visibility: visible;
-  }
-  
-
-   input.error {
-    border-color: red;
-  }
-
-  button {
-    padding: 0.8rem;
-    margin-top: 0.8rem;
-    background: var(--very-dark-blue);
-    color: var(--very-light-gray);
-    border: none;
-    border-radius: 7px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-image: linear-gradient(hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
-  }
+ 
 
   @media(min-width: 900px){
     form {
